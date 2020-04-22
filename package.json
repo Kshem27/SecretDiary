@@ -1,0 +1,17 @@
+{
+  "name": "secretdiary",
+  "version": "1.0.0",
+  "description": "An app to store all your ideas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kshem Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10"
+  }
+}
