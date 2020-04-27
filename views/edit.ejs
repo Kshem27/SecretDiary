@@ -1,0 +1,5 @@
+<form action="/<%=idea._id%>?_method=PUT" method="POST">
+    <input type="text" placeholder="Title" name="idea[title]" value="<%=idea.title%>">
+    <input type="text" placeholder="Content" name="idea[content]" value="<%=idea.content%>" >
+    <input type="submit">
+</form>

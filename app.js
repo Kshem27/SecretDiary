@@ -2,6 +2,7 @@ const express = require('express'),
 	bodyParser = require('body-parser'),
 	passport = require('passport'),
 	localStrategy = require('passport-local'),
+	methodOverride = require('method-override'),
 	PORT = process.env.PORT || 3000;
 var connectDB = require('./DB/Connection'),
 	app = express();
@@ -11,6 +12,7 @@ connectDB();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 //PASSPORT CONFIGURATION
 app.use(
 	require('express-session')({
@@ -44,6 +46,49 @@ app.post('/', (req, res) => {
 			return console.log(err);
 		}
 		console.log(createdIdea);
+		res.redirect('/');
+	});
+});
+//SHOW
+app.get('/:id', (req, res) => {
+	Idea.findById(req.params.id, (err, foundIdea) => {
+		if (err) {
+			console.log(err);
+			return res.redirect('/');
+		}
+		console.log(foundIdea);
+		res.render('show', { idea: foundIdea });
+	});
+});
+//EDIT
+app.get('/:id/edit', (req, res) => {
+	Idea.findById(req.params.id, (err, foundIdea) => {
+		if (err) {
+			console.log(err);
+			return res.redirect('/');
+		}
+		console.log(foundIdea);
+		res.render('edit', { idea: foundIdea });
+	});
+});
+//UPDATE
+app.put('/:id', (req, res) => {
+	Idea.findByIdAndUpdate(req.params.id, req.body.idea, (err, updatedIdea) => {
+		if (err) {
+			console.log(err);
+			return res.redirect('/');
+		}
+		console.log(updatedIdea);
+		res.redirect('/' + req.params.id);
+	});
+});
+//DELETE
+app.delete('/:id', (req, res) => {
+	Idea.findByIdAndDelete(req.params.id, (err) => {
+		if (err) {
+			console.log(err);
+			return res.redirect('/');
+		}
 		res.redirect('/');
 	});
 });
