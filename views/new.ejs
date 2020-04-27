@@ -1,5 +1,8 @@
-<form action="/" method="POST">
-    <input type="text" placeholder="Title" name="idea[title]">
-    <input type="text" placeholder="Content" name="idea[content]">
-    <input type="submit">
+<%- include('./partials/header.ejs') %>
+<h1 class="text-center display-4">Add a new Chapter to your Diary</h1>
+<form action="/ideas" method="POST" class="d-flex flex-column">
+    <input type="text" placeholder="Title" name="idea[title]" class="form-control inputBox">
+    <textarea placeholder="Content" name="idea[content]" class="form-control inputBox" rows='5'></textarea>
+    <input type="submit" class="btn btn-light" id="submitButton">
 </form>
+<%- include('./partials/footer.ejs') %>

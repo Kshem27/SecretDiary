@@ -1,5 +1,11 @@
-<h1>Ideas</h1>
-<% ideas.forEach((idea)=>{ %>
-    <h1><%= idea.title %></h1>
-    <a href="/<%= idea._id %>">More</a>
-<%})%>
+<%- include('./partials/header.ejs') %>
+<div id ="mainDiv" class="text-center">
+        <h1><%=currentUser.username.toUpperCase()%>'S SECRET DIARY</h1>
+        <% ideas.forEach((idea)=>{ if(idea.author.id.equals(currentUser._id)){%>
+            <h1><%= idea.title %></h1>
+            <a href="/ideas/<%= idea._id %>" class="btn btn-light">Read More</a>
+            <hr>
+        <%}})%>
+        <a href="/ideas/new" class="btn btn-light mt-5">Add a new Chapter</a>
+</div>
+<%- include('./partials/footer.ejs') %>

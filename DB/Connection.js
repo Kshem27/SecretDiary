@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const uri = 'mongodb+srv://kshem27:<password>@cluster0-hikom.mongodb.net/secretDiary?retryWrites=true&w=majority';
+const uri =
+	'mongodb+srv://kshem27:%53u%6Doni%6Bs%39%30%21@cluster0-hikom.mongodb.net/secretDiary?retryWrites=true&w=majority';
 var connectDB = async () => {
 	await mongoose
 		.connect(uri, {
