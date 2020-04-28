@@ -1,0 +1,11 @@
+<%- include('../partials/header.ejs') %>
+<div id="mainDiv" class="text-center pb-2 px-2">
+<h1 class="display-3" id="title"><%=idea.title%></h1>
+<hr>
+<p id="content"><%=idea.content%></p>
+<a href="/ideas/<%=idea._id%>/edit" class="btn btn-info">Edit</a>
+<form action="/ideas/<%=idea._id%>?_method=DELETE" method="POST" class="d-inline">
+    <button class="btn btn-danger">DELETE</button>
+</form>
+</div>
+<%- include('../partials/footer.ejs') %>

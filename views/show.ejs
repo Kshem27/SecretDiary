@@ -1,8 +1,0 @@
-<%- include('./partials/header.ejs') %>
-<h1><%=idea.title%></h1>
-<p><%=idea.content%></p>
-<a href="/ideas/<%=idea._id%>/edit">Edit</a>
-<form action="/ideas/<%=idea._id%>?_method=DELETE" method="POST" class="d-inline">
-    <button>DELETE</button>
-</form>
-<%- include('./partials/footer.ejs') %>

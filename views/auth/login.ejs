@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs') %>
+<div class="row text-info" id="mainDiv">
+    <div class="col-md-6 text-center" id="viewBox">
+        <h1 class="display-4">Your Secret Diary Awaits You..</h1>
+        <p class="lead">Shhhh.. all your secrets are locked</p>
+    </div>
+    <div class="col-md-6 text-center" id="loginDiv">
+        <h1 class="display-4">Login To View Your Secret Diary</h1>
+        <form action="/login" method="POST" class="d-flex flex-column">
+            <input type="text" placeholder="Username" name="username" required='required' class="form-control inputBox">
+            <input type="password" placeholder='Password' name="password" required='required' class="form-control inputBox">
+  
+            <button class="btn btn-info" id="submitButton">Log In</button>
+        </form>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,17 +1,17 @@
-<%- include('./partials/header.ejs') %>
-<div class="row">
-    <div class="col-md-6" id="viewBox">
+<%- include('../partials/header.ejs') %>
+<div class="row mt-5 text-info" id="mainDiv">
+    <div class="col-md-6 text-center" id="viewBox">
         <h1 class="display-4">One Place To Store all Your Secrets..</h1>
         <p><a href="/login">Login</a> if alredy registered</p>
     </div>
     <div class="col-md-6 text-center" id="loginDiv">
-        <h1>Sign Up!</h1>
+        <h1 class="display-4">Sign Up!</h1>
         <form action="/register" method="POST" class="d-flex flex-column">
-            <input type="text" placeholder='Username' name="username" required='required' class="form-control inputBox">
+            <input type="text" placeholder="Username" name="username" required='required' class="form-control inputBox">
             <input type="password" placeholder='Password' name="password" required='required' class="form-control inputBox">
-            <button class="btn btn-light" id="submitButton">Submit</button>
+            <button class="btn btn-info" id="submitButton">Sign Up</button>
         </form>
     </div>
 </div>
 
-<%- include('./partials/footer.ejs') %>
+<%- include('../partials/footer.ejs') %>
