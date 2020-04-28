@@ -1,7 +1,12 @@
 <%- include('../partials/header.ejs') %>
-<form action="/ideas/<%=idea._id%>?_method=PUT" method="POST">
-    <input type="text" placeholder="Title" name="idea[title]" value="<%=idea.title%>">
-    <input type="text" placeholder="Content" name="idea[content]" value="<%=idea.content%>" >
-    <input type="submit">
-</form>
+<div id="mainDiv" class="text-center">
+    <form action="/ideas/<%=idea._id%>?_method=PUT" method="POST" class="my-3">
+        <label>Title</label>
+        <input type="text" name="idea[title]" value="<%=idea.title%>" class="form-control inputBox">
+        <label>Content</label>
+        <textarea type="text" name="idea[content]" class="form-control inputBox" rows="10"><%=idea.content%></textarea>
+        <input type="submit" id="submitButton" class="btn btn-info">
+    </form>
+</div>
+
 <%- include('../partials/footer.ejs') %>
