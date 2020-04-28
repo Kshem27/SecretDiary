@@ -7,8 +7,8 @@ body {
 		#203a43,
 		#0f2027
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	color: white;
-	font-family: 'Playfair Display', serif;
+	color: #17a2b8;
+	font-family: 'Lobster Two', cursive;
 }
 #loginDiv {
 	margin: 10% 0;
@@ -26,4 +26,28 @@ body {
 }
 #viewBox {
 	margin-top: 10%;
+}
+
+#mainDiv {
+	margin-top: 5%;
+	border: 7px solid #17a2b8;
+	border-radius: 10px;
+	opacity: 0;
+	position: relative;
+	animation: login;
+	animation-duration: 1s;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+}
+@keyframes login {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+hr {
+	border: 2px solid #17a2b8;
+	width: 75%;
 }
